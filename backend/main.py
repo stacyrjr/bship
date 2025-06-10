@@ -3,8 +3,17 @@ from pydantic import BaseModel
 import uvicorn
 from typing import Optional
 from uuid import uuid4
+from fastapi.middleware.cors import CORSMiddleware
+
 
 app = FastAPI()
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:3000"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 sessions: dict[str, str] = {}  # session_id -> username
 

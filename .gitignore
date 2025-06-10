@@ -1,1 +1,14 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# React dependencies
+frontend/node_modules/
+frontend/build/
+
+# Python virtual environment
 venv/
+
+# OS files
+.DS_Store
+Thumbs.db
